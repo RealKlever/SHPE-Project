@@ -10,7 +10,6 @@ public class Quiz {
         String q7 = "Rumor has it these animals were imported\n (a) Geese\n (b) Birds\n (c) Rats\n (d) Squirrels\n";
         String q8 = "Can we still use the red phone booth\n (a) No\n (b) Yes\n";
         String q9 = "What % of OU is affiliated with greek life\n (a) 23%\n (b) 53%\n (c) 29%\n (d) 46%\n";
-        System.out.println(q1+q2+q3+q4+q5+q6+q7+q8+q9);
         Question[] questions = {
             new Question(q1, "d"),
             new Question(q2, "c"),
@@ -22,6 +21,7 @@ public class Quiz {
             new Question(q8, "b"),
             new Question(q9, "c")
         };
+        triviaQuiz(questions);
     }
     public static void triviaQuiz(Question[] questions){
         int score = 0;
@@ -29,7 +29,10 @@ public class Quiz {
         for(int i = 0; i < questions.length; i++){
             System.out.println(questions[i].prompt);
             String response = stdin.nextLine();
-            if()
+            if(response.equalsIgnoreCase(questions[i].answer)){
+                score++;
+            }
         }
+        System.out.println("your score is " + score + "/" + questions.length);
     }
 }
