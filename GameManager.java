@@ -11,6 +11,7 @@ public class GameManager extends JFrame{
         JFrame window = new JFrame();
         JPanel panel = new JPanel();
         JLabel title = new JLabel("<html><font color='red'>OU</font> Trivia</html>");
+        JLabel question;
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension screenSize = toolkit.getScreenSize();
         Font font = new Font("Arial", Font.BOLD, 150);
@@ -27,9 +28,33 @@ public class GameManager extends JFrame{
         // Set background color
         window.getContentPane().setBackground(cream);
 
+        // Add OU Trivia title to window
         title.setFont(font);
         title.setVerticalAlignment(SwingConstants.TOP);
         title.setHorizontalAlignment(SwingConstants.CENTER);
         window.add(title);
+
+        JButton a = new JButton("Disable middle button");
+        a.setVerticalTextPosition(AbstractButton.CENTER);
+        a.setHorizontalTextPosition(AbstractButton.RIGHT); //aka LEFT, for left-to-right locales
+        a.setActionCommand("disable");
+        a.setSize(300, 150);
+        window.getContentPane().add(a);
+
+        JButton b = new JButton("Middle button");
+        b.setVerticalTextPosition(AbstractButton.LEFT);
+        b.setHorizontalTextPosition(AbstractButton.CENTER);
+        b.setSize(300, 150);
+        window.getContentPane().add(b);
+        
+        JButton c = new JButton("Enable middle button");
+        //Use the default text position of CENTER, TRAILING (RIGHT).
+        c.setActionCommand("enable");
+        c.setEnabled(false);
+
+        JButton d = new JButton("Enable middle button");
+        //Use the default text position of CENTER, TRAILING (RIGHT).
+        d.setActionCommand("enable");
+        d.setEnabled(false);
     }
 }
