@@ -7,21 +7,29 @@ public class GameManager extends JFrame{
     }
     
     public GameManager(){
-        JFrame frame = new JFrame();
+        // Adding Java UI elements
+        JFrame window = new JFrame();
         JPanel panel = new JPanel();
+        JLabel title = new JLabel("<html><font color='red'>OU</font> Trivia</html>");
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension screenSize = toolkit.getScreenSize();
+        Font font = new Font("Arial", Font.BOLD, 150);
 
-        Color crimson = new Color(153, 0, 0);
+        Color cream = new Color(255, 253, 208);
 
         // Set window title, visiblity, and size
-        frame.setTitle("OU Trivia");
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        frame.setSize(screenSize.width, screenSize.height);
+        window.setTitle("OU Trivia");
+        window.setVisible(true);
+        window.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        window.setSize(screenSize.width, screenSize.height);
         pack();
 
         // Set background color
-        frame.getContentPane().setBackground(crimson);
+        window.getContentPane().setBackground(cream);
+
+        title.setFont(font);
+        title.setVerticalAlignment(SwingConstants.TOP);
+        title.setHorizontalAlignment(SwingConstants.CENTER);
+        window.add(title);
     }
 }
